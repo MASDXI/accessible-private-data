@@ -46,7 +46,7 @@ describe("Storage", function () {
         expect(data).to.equal("0x0000000000000000000000000000000000000000000000000000000000000000");
     });
 
-    it("slot_3 bybass", async function () {
+    it("slot_3 bypass", async function () {
         const { storage, account } = await loadFixture(deployStorage);
         storage.set(1, account[0].address, [account[1].address,account[2].address]); // set method
 
