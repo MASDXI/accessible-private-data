@@ -69,12 +69,12 @@ describe("Storage", function () {
         const var1 = await hre.ethers.provider.getStorageAt(storage.address,slot(1,3)); // mapping(uint(key) => struct)
         const var2_length = await hre.ethers.provider.getStorageAt(storage.address,BigNumber.from(slot(1,3)).add(1)); // elementSize
         const var2_0 = await hre.ethers.provider.getStorageAt(storage.address,BigNumber.from(hashed).add(0));
-        const var2_1 = await hre.ethers.provider.getStorageAt(storage.address,BigNumber.from(hashed).add(0));
+        const var2_1 = await hre.ethers.provider.getStorageAt(storage.address,BigNumber.from(hashed).add(1));
 
         expect(var1).to.equal("0x000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb92266");
         expect(var2_length).to.equal("0x0000000000000000000000000000000000000000000000000000000000000002");
         expect(var2_0).to.equal("0x00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8");
-        expect(var2_1).to.equal("0x00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c8");
+        expect(var2_1).to.equal("0x0000000000000000000000003c44cdddb6a900fa2b585dd299e03d12fa4293bc");
 
     });
   });
